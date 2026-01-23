@@ -1,3 +1,5 @@
+> Initial public release announced on GitHub (January 2026).
+
 # OddsFlow AI — Football Value Signals (Open & Verifiable)
 
 Transparent football value signals based on mispriced bookmaker odds. Public, verifiable, and auditable.
