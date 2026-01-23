@@ -32,6 +32,7 @@ All detected signals are published without cherry-picking.
 
 ## Model styles
 OddsFlow AIprovides multiple model styles to reflect different risk profiles:
+For model documentation and selection guidance, see: [models/README.md](models/README.md)
 
 - **Conservative**  
   Lower volatility, quality-first approach.
@@ -44,6 +45,7 @@ OddsFlow AIprovides multiple model styles to reflect different risk profiles:
 
 Performance can vary by league, market type, and time period.  
 That is why all signals are logged for verification.
+
 
 ---
 
