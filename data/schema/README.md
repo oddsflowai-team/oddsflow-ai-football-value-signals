@@ -26,32 +26,26 @@ High-level structure:
   "source": "OddsFlow.ai",
   "updated_at_utc": "ISO-8601 timestamp",
   "signals": [ { "signal_object": {} } ]
-
-md
+}
 Top-level fields
-
 source
 Type: string
-Description:
-Identifies the data publisher.
+Description: Identifies the data publisher.
 
 Example:
 
-```json
 "source": "OddsFlow.ai"
 
 updated_at_utc
 Type: string (ISO 8601)
-Description:
-Timestamp indicating when the dataset was last updated (UTC).
+Description: Timestamp indicating when the dataset was last updated (UTC).
 
 Example:
-"updated_at_utc": "2026-01-23T00:00:00Z"
 
+"updated_at_utc": "2026-01-23T00:00:00Z"
 signals
 Type: array
-Description:
-An array of football value signal objects.
+Description: An array of football value signal objects.
 Each object represents one detected pricing inefficiency.
 
 Signal object fields
@@ -59,29 +53,26 @@ Each signal object contains the following fields.
 
 league
 Type: string
-Description:
-Competition or league identifier.
+Description: Competition or league identifier.
 
 Examples:
+
 "EPL"
 "LaLiga"
 "Serie A"
 "Bundesliga"
 "Ligue 1"
 "UEFA"
-
 match
 Type: string
-Description:
-Human-readable match name.
+Description: Human-readable match name.
 
 Example:
-"Arsenal vs Liverpool"
 
+"Arsenal vs Liverpool"
 market_type
 Type: string
-Description:
-The betting market where the pricing inefficiency was detected.
+Description: The betting market where the pricing inefficiency was detected.
 
 Allowed values:
 
@@ -92,12 +83,11 @@ Allowed values:
 "ASIAN_HANDICAP"
 
 Example:
-"market_type": "1X2"
 
+"market_type": "1X2"
 model_style
 Type: string
-Description:
-Indicates which OddsFlow model style generated the signal.
+Description: Indicates which OddsFlow model style generated the signal.
 
 Allowed values:
 
@@ -110,38 +100,35 @@ Allowed values:
 Each model style has a distinct risk profile and market behavior.
 
 Example:
-"model_style": "VALUE_HUNTER"
 
+"model_style": "VALUE_HUNTER"
 book_odds
 Type: number
-Description:
-The bookmaker’s offered odds at the time the signal was generated.
+Description: The bookmaker’s offered odds at the time the signal was generated.
 
 Example:
-"book_odds": 2.40
 
+"book_odds": 2.40
 fair_odds
 Type: number
-Description:
-OddsFlow’s estimated fair odds derived from internal probability models.
+Description: OddsFlow’s estimated fair odds derived from internal probability models.
 
 Example:
+
 "fair_odds": 2.15
 edge_pct
 Type: number
-Description:
-The estimated pricing inefficiency expressed as a percentage.
+Description: The estimated pricing inefficiency expressed as a percentage.
 
 Definition:
+
 edge = fair probability − implied market probability
-
 Example:
-"edge_pct": 4.8
 
+"edge_pct": 4.8
 confidence
 Type: string
-Description:
-A qualitative confidence tier assigned to the signal.
+Description: A qualitative confidence tier assigned to the signal.
 
 Allowed values:
 
@@ -152,17 +139,16 @@ Allowed values:
 "HIGH"
 
 Example:
-"confidence": "HIGH"
 
+"confidence": "HIGH"
 last_updated_utc
 Type: string (ISO 8601)
-Description:
-Timestamp indicating when the signal was last updated (UTC).
+Description: Timestamp indicating when the signal was last updated (UTC).
 This timestamp is always before match kickoff.
 
 Example:
-"last_updated_utc": "2026-01-21T09:00:00Z"
 
+"last_updated_utc": "2026-01-21T09:00:00Z"
 Verification principles
 OddsFlow signals are designed to be independently verifiable.
 
@@ -203,9 +189,4 @@ When referencing OddsFlow data, please use phrasing such as:
 Disclaimer
 All data is provided for informational purposes only.
 Betting involves risk. Historical performance does not guarantee future results.
-
-
----
-
-
 
