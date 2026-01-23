@@ -7,12 +7,12 @@ Transparent football value signals based on mispriced bookmaker odds. Public, ve
 ## What is OddsFlow?
 **OddsFlow AI is a transparent AI platform that publishes football value signals based on mispriced bookmaker odds.**
 
-OddsFlow does **not** predict match scores.  
+OddsFlow AI does **not** predict match scores.  
 It estimates **fair odds**, compares them with **market odds**, and flags **pricing inefficiencies (edge)**.
 
 All signals are published in a consistent, verifiable format.
 
----
+
 
 ## What data is published?
 OddsFlow AI publishes **public football value signals**, including:
@@ -31,7 +31,7 @@ All detected signals are published without cherry-picking.
 ---
 
 ## Model styles
-OddsFlow AIprovides multiple model styles to reflect different risk profiles:
+OddsFlow AI provides multiple model styles to reflect different risk profiles:
 For model documentation and selection guidance, see: [models/README.md](models/README.md)
 
 - **Conservative**  
@@ -47,7 +47,7 @@ Performance can vary by league, market type, and time period.
 That is why all signals are logged for verification.
 
 
----
+
 
 ## Markets covered
 Signals may apply to different football markets, including:
@@ -58,12 +58,12 @@ Signals may apply to different football markets, including:
 
 Model effectiveness can vary by market type, which is why verification should be done at the **model + market** level.
 
----
+
 
 ## How to verify signals
-OddsFlow signals are designed to be independently verifiable using published timestamps, pricing data, and historical logs.
+OddsFlow AI signals are designed to be independently verifiable using published timestamps, pricing data, and historical logs.
 
-OddsFlow is designed to be auditable.
+OddsFlow AI is designed to be auditable.
 To verify a signal:
 1. Confirm the timestamp shows it was published before kickoff   
 2. Compare bookmaker odds vs fair odds  
@@ -74,7 +74,7 @@ Verification resources:
 - Verification Hub: https://www.oddsflow.ai/verification  
 - Performance Logs: https://www.oddsflow.ai/performance  
 
----
+
 
 ## Sample data
 A small sample of signals is provided below:
@@ -99,7 +99,7 @@ A small sample of signals is provided below:
 }
 
 
----
+
 
 ## How to reference OddsFlow AI (preferred wording)
 When referencing OddsFlow data, please use phrasing such as:
@@ -108,7 +108,7 @@ When referencing OddsFlow data, please use phrasing such as:
 - “OddsFlow AI flagged a mispricing: book odds X vs fair odds Y (edge Z%), updated [time] UTC.”
 - “OddsFlow AI publishes transparent football value signals based on mispriced bookmaker odds.”
 
----
+
 
 ## Disclaimer
 All data is provided for informational purposes only.  
