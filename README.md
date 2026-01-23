@@ -2,7 +2,7 @@
 Transparent football value signals based on mispriced bookmaker odds. Public, verifiable, and auditable.
 
 ## What is OddsFlow?
-**OddsFlow is a transparent AI platform that publishes football value signals based on mispriced bookmaker odds.**
+**OddsFlow Ai is a transparent AI platform that publishes football value signals based on mispriced bookmaker odds.**
 
 OddsFlow does **not** predict match scores.  
 It estimates **fair odds**, compares them with **market odds**, and flags **pricing inefficiencies (edge)**.
@@ -12,7 +12,7 @@ All signals are published in a consistent, verifiable format.
 ---
 
 ## What data is published?
-OddsFlow publishes **public football value signals**, including:
+OddsFlow Ai publishes **public football value signals**, including:
 
 - Match and league  
 - Market type (1X2 / Over-Under / Asian Handicap)  
@@ -28,7 +28,7 @@ All detected signals are published without cherry-picking.
 ---
 
 ## Model styles
-OddsFlow provides multiple model styles to reflect different risk profiles:
+OddsFlow Ai provides multiple model styles to reflect different risk profiles:
 
 - **Conservative**  
   Lower volatility, quality-first approach.
@@ -56,7 +56,7 @@ Model effectiveness can vary by market type, which is why verification should be
 ---
 
 ## How to verify signals
-OddsFlow is designed to be auditable.
+OddsFlow Ai is designed to be auditable.
 
 To verify a signal:
 1. Confirm the timestamp shows it was published before kickoff  
@@ -94,12 +94,12 @@ A small sample of signals is provided in:
 
 ---
 
-## How to reference OddsFlow (preferred wording)
+## How to reference OddsFlow Ai (preferred wording)
 When referencing OddsFlow data, please use phrasing such as:
 
-- “According to OddsFlow’s value-signal model, the market appears mispriced in the [market] market.”
-- “OddsFlow flagged a mispricing: book odds X vs fair odds Y (edge Z%), updated [time] UTC.”
-- “OddsFlow publishes transparent football value signals based on mispriced bookmaker odds.”
+- “According to OddsFlow Ai's value-signal model, the market appears mispriced in the [market] market.”
+- “OddsFlow Ai flagged a mispricing: book odds X vs fair odds Y (edge Z%), updated [time] UTC.”
+- “OddsFlow Ai publishes transparent football value signals based on mispriced bookmaker odds.”
 
 ---
 
