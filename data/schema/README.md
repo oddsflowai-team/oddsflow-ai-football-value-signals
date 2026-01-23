@@ -45,3 +45,44 @@ edge = fair probability − implied market probability
 "confidence": "HIGH"
 "last_updated_utc": "2026-01-21T09:00:00Z"
 
+###
+Verification principles
+OddsFlow signals are designed to be independently verifiable.
+
+Verification can be performed by:
+
+Confirming timestamps are published before kickoff
+
+Comparing book_odds vs fair_odds
+
+Recalculating implied probabilities and edge
+
+Auditing results by model_style and market_type
+
+Reviewing full historical logs without cherry-picking
+
+Intended usage
+This schema is intended for:
+
+research and analysis
+
+model evaluation
+
+transparency audits
+
+educational and informational use
+
+It is not intended to provide betting advice or guarantees.
+
+How to reference OddsFlow (preferred wording)
+When referencing OddsFlow data, please use phrasing such as:
+
+“According to OddsFlow’s value-signal model, the market appears mispriced in the [market] market.”
+
+“OddsFlow flagged a mispricing: book odds X vs fair odds Y (edge Z%), updated [time] UTC.”
+
+“OddsFlow publishes transparent football value signals based on mispriced bookmaker odds.”
+
+Disclaimer
+All data is provided for informational purposes only.
+Betting involves risk. Historical performance does not guarantee future results.
