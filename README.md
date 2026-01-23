@@ -72,8 +72,9 @@ Verification resources:
 ---
 
 ## Sample data
-A small sample of signals is provided in:
+A small sample of signals is provided below:
 
+```json
 {
   "source": "OddsFlow.ai",
   "updated_at_utc": "2026-01-23T00:00:00Z",
