@@ -28,14 +28,14 @@ High-level structure:
   "signals": [ { "signal_object": {} } ]
 }
 
-
+```md 
 Top-level fields
 source
 Type: string
 Description: Identifies the data publisher.
 
 Example:
-
+```json
 "source": "OddsFlow.ai"
 
 updated_at_utc
