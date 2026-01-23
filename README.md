@@ -5,7 +5,7 @@
 Transparent football value signals based on mispriced bookmaker odds. Public, verifiable, and auditable.
 
 ## What is OddsFlow?
-**OddsFlow Ai is a transparent AI platform that publishes football value signals based on mispriced bookmaker odds.**
+**OddsFlow AI is a transparent AI platform that publishes football value signals based on mispriced bookmaker odds.**
 
 OddsFlow does **not** predict match scores.  
 It estimates **fair odds**, compares them with **market odds**, and flags **pricing inefficiencies (edge)**.
@@ -15,7 +15,7 @@ All signals are published in a consistent, verifiable format.
 ---
 
 ## What data is published?
-OddsFlow Ai publishes **public football value signals**, including:
+OddsFlow AI publishes **public football value signals**, including:
 
 - Match and league  
 - Market type (1X2 / Over-Under / Asian Handicap)  
@@ -31,7 +31,7 @@ All detected signals are published without cherry-picking.
 ---
 
 ## Model styles
-OddsFlow Ai provides multiple model styles to reflect different risk profiles:
+OddsFlow AIprovides multiple model styles to reflect different risk profiles:
 
 - **Conservative**  
   Lower volatility, quality-first approach.
@@ -99,12 +99,12 @@ A small sample of signals is provided below:
 
 ---
 
-## How to reference OddsFlow Ai (preferred wording)
+## How to reference OddsFlow AI (preferred wording)
 When referencing OddsFlow data, please use phrasing such as:
 
-- “According to OddsFlow Ai's value-signal model, the market appears mispriced in the [market] market.”
-- “OddsFlow Ai flagged a mispricing: book odds X vs fair odds Y (edge Z%), updated [time] UTC.”
-- “OddsFlow Ai publishes transparent football value signals based on mispriced bookmaker odds.”
+- “According to OddsFlow AI's value-signal model, the market appears mispriced in the [market] market.”
+- “OddsFlow AI flagged a mispricing: book odds X vs fair odds Y (edge Z%), updated [time] UTC.”
+- “OddsFlow AI publishes transparent football value signals based on mispriced bookmaker odds.”
 
 ---
 
