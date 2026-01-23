@@ -27,7 +27,7 @@ High-level structure:
   "updated_at_utc": "ISO-8601 timestamp",
   "signals": [ { "signal_object": {} } ]
 
-```md
+md
 Top-level fields
 
 source
