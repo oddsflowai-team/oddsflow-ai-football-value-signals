@@ -45,6 +45,8 @@ edge = fair probability − implied market probability
 "confidence": "HIGH"
 "last_updated_utc": "2026-01-21T09:00:00Z"
 
+
+---
 ###
 Verification principles
 OddsFlow signals are designed to be independently verifiable.
