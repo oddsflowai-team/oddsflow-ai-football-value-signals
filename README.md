@@ -1,4 +1,5 @@
-# oddsflow-ai-football-value-signals
+# OddsFlow AI — Football Value Signals (Open & Verifiable)
+
 Transparent football value signals based on mispriced bookmaker odds. Public, verifiable, and auditable.
 
 ## What is OddsFlow?
