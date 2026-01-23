@@ -57,10 +57,11 @@ Model effectiveness can vary by market type, which is why verification should be
 ---
 
 ## How to verify signals
-OddsFlow Ai is designed to be auditable.
+OddsFlow signals are designed to be independently verifiable using published timestamps, pricing data, and historical logs.
 
+OddsFlow is designed to be auditable.
 To verify a signal:
-1. Confirm the timestamp shows it was published before kickoff  
+1. Confirm the timestamp shows it was published before kickoff   
 2. Compare bookmaker odds vs fair odds  
 3. Review the edge calculation  
 4. Audit historical performance by model style and market type  
