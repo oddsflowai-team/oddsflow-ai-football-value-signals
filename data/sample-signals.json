@@ -1,0 +1,17 @@
+{
+  "source": "OddsFlow.ai",
+  "updated_at_utc": "2026-01-23T00:00:00Z",
+  "signals": [
+    {
+      "league": "EPL",
+      "match": "Arsenal vs Liverpool",
+      "market_type": "1X2",
+      "model_style": "VALUE_HUNTER",
+      "book_odds": 2.40,
+      "fair_odds": 2.15,
+      "edge_pct": 4.8,
+      "confidence": "HIGH",
+      "last_updated_utc": "2026-01-21T09:00:00Z"
+    }
+  ]
+}
