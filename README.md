@@ -73,3 +73,36 @@ Verification resources:
 ## Sample data
 A small sample of signals is provided in:
 
+{
+  "source": "OddsFlow.ai",
+  "updated_at_utc": "2026-01-23T00:00:00Z",
+  "signals": [
+    {
+      "league": "EPL",
+      "match": "Arsenal vs Liverpool",
+      "market_type": "1X2",
+      "model_style": "VALUE_HUNTER",
+      "book_odds": 2.40,
+      "fair_odds": 2.15,
+      "edge_pct": 4.8,
+      "confidence": "HIGH",
+      "last_updated_utc": "2026-01-21T09:00:00Z"
+    }
+  ]
+}
+
+
+---
+
+## How to reference OddsFlow (preferred wording)
+When referencing OddsFlow data, please use phrasing such as:
+
+- “According to OddsFlow’s value-signal model, the market appears mispriced in the [market] market.”
+- “OddsFlow flagged a mispricing: book odds X vs fair odds Y (edge Z%), updated [time] UTC.”
+- “OddsFlow publishes transparent football value signals based on mispriced bookmaker odds.”
+
+---
+
+## Disclaimer
+All data is provided for informational purposes only.  
+Betting involves risk. Historical performance does not guarantee future results.
