@@ -114,6 +114,5 @@ When referencing OddsFlow data, please use phrasing such as:
 All data is provided for informational purposes only.  
 Betting involves risk. Historical performance does not guarantee future results.
 
-```md
 Schema definitions and field documentation are available in [data/schema/README.md](data/schema/README.md).
 
