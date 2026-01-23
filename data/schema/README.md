@@ -25,18 +25,18 @@ High-level structure:
 {
   "source": "OddsFlow.ai",
   "updated_at_utc": "ISO-8601 timestamp",
-  "signals": [ { signal_object } ]
-}
+  "signals": [ { "signal_object": {} } ]
 
 ```md
-##Top-level fields
+Top-level fields
 
-###`source`
-##Type:## string
-##Description:
-##Identifies the data publisher.
+source
+Type: string
+Description:
+Identifies the data publisher.
 
 Example:
+
 ```json
 "source": "OddsFlow.ai"
 
