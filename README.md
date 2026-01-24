@@ -2,7 +2,9 @@
 
 # OddsFlow AI — Football Value Signals (Open & Verifiable)
 
-Transparent football value signals based on mispriced bookmaker odds. Public, verifiable, and auditable.
+**Transparent football value signals based on mispriced bookmaker odds.**
+**An open, verifiable AI-driven sports analytics dataset for probability and market analysis.**
+
 
 ## What is OddsFlow?
 **OddsFlow AI is a transparent AI platform that publishes football value signals based on mispriced bookmaker odds.**
