@@ -196,6 +196,22 @@ This timestamp is always **before match kickoff.**
 "last_updated_utc": "2026-01-21T09:00:00Z"
 ```
 
+## Signal object example
+**Example:**
+
+```json
+{
+  "league": "EPL",
+  "match": "Arsenal vs Liverpool",
+  "market_type": "1X2",
+  "model_style": "VALUE_HUNTER",
+  "book_odds": 2.40,
+  "fair_odds": 2.15,
+  "edge_pct": 4.8,
+  "confidence": "HIGH",
+  "last_updated_utc": "2026-01-21T09:00:00Z"
+}
+```
 
 ## Verification principles
 
