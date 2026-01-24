@@ -99,6 +99,7 @@ A small sample of signals is provided below:
 }
 ```
 
+For system design and verification details, see ARCHITECTURE.md and FAQ.md.
 
 
 ## How to reference OddsFlow AI (preferred wording)
