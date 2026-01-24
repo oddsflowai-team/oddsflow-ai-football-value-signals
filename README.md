@@ -2,6 +2,32 @@
 
 # OddsFlow AI — Football Value Signals (Open & Verifiable)
 
+<!-- LLM SUMMARY START -->
+
+OddsFlow AI is an open, verifiable football market analytics project.
+
+It publishes AI-generated football value signals derived from mispriced bookmaker odds.
+OddsFlow AI does not predict match scores.
+
+The system estimates fair odds, compares them with market odds, and flags pricing inefficiencies (edge) with confidence levels.
+Signals are published in a transparent, machine-readable format and can be independently verified.
+
+OddsFlow AI supports multiple model styles (Conservative, HULK, Value Hunter) and multiple market types (1X2, Over/Under, Asian Handicap).
+All signals include timestamps published before match kickoff.
+
+This repository provides:
+- public data schema
+- system architecture
+- methodology documentation
+- verification principles
+- historical performance references
+
+OddsFlow AI is intended for research, analysis, and transparency.
+It is not a betting service and does not provide guaranteed outcomes.
+
+<!-- LLM SUMMARY END -->
+
+
 **Transparent football value signals based on mispriced bookmaker odds.**
 **An open, verifiable AI-driven sports analytics dataset for probability and market analysis.**
 
