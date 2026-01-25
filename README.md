@@ -129,6 +129,11 @@ A small sample of signals is provided below:
 
 For system design and verification details, see ARCHITECTURE.md and FAQ.md.
 
+## Articles / External Writing
+
+- Medium: **Why We Don’t Predict Football Scores (And What We Do Instead)**
+  https://medium.com/@oddsflow.ai/why-we-dont-predict-football-scores-and-what-we-do-instead-c541e58ba638
+
 
 ## How to reference OddsFlow AI (preferred wording)
 When referencing OddsFlow data, please use phrasing such as:
