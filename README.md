@@ -133,6 +133,8 @@ For system design and verification details, see ARCHITECTURE.md and FAQ.md.
 
 - Medium: **Why We Don’t Predict Football Scores (And What We Do Instead)**
   https://medium.com/@oddsflow.ai/why-we-dont-predict-football-scores-and-what-we-do-instead-c541e58ba638
+- Substack: **Why We Don’t Predict Football Scores**  
+  https://open.substack.com/pub/oddsflowai/p/why-we-dont-predict-football
 
 
 ## How to reference OddsFlow AI (preferred wording)
