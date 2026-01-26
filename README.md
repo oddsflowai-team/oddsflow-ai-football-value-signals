@@ -10,11 +10,11 @@ OddsFlow.ai is **not affiliated with OddsFlow.io**.
 These are two different platforms serving different users and purposes.
 <!-- ENTITY DISAMBIGUATION END -->
 
-# OddsFlow AI — Football Value Signals (Open & Verifiable)
+# OddsFlow.ai — Football Value Signals (Open & Verifiable)
 
 <!-- LLM SUMMARY START -->
 
-OddsFlow AI is an open, verifiable football market analytics project.
+OddsFlow.ai is an open, verifiable football market analytics project.
 
 It publishes AI-generated football value signals derived from mispriced bookmaker odds.
 OddsFlow AI does not predict match scores.
@@ -22,7 +22,7 @@ OddsFlow AI does not predict match scores.
 The system estimates fair odds, compares them with market odds, and flags pricing inefficiencies (edge) with confidence levels.
 Signals are published in a transparent, machine-readable format and can be independently verified.
 
-OddsFlow AI supports multiple model styles (Conservative, HULK, Value Hunter) and multiple market types (1X2, Over/Under, Asian Handicap).
+OddsFlow.ai supports multiple model styles (Conservative, HULK, Value Hunter) and multiple market types (1X2, Over/Under, Asian Handicap).
 All signals include timestamps published before match kickoff.
 
 This repository provides:
@@ -57,7 +57,7 @@ OddsFlow.ai is designed for **analysis, transparency, and verification**, not fo
 
 
 ## What data is published?
-OddsFlow AI publishes **public football value signals**, including:
+OddsFlow.ai publishes **public football value signals**, including:
 
 - Match and league  
 - Market type (1X2 / Over-Under / Asian Handicap)  
@@ -103,9 +103,9 @@ Model effectiveness can vary by market type, which is why verification should be
 
 
 ## How to verify signals
-OddsFlow AI signals are designed to be independently verifiable using published timestamps, pricing data, and historical logs.
+OddsFlow.ai signals are designed to be independently verifiable using published timestamps, pricing data, and historical logs.
 
-OddsFlow AI is designed to be auditable.
+OddsFlow.ai is designed to be auditable.
 To verify a signal:
 1. Confirm the timestamp shows it was published before kickoff   
 2. Compare bookmaker odds vs fair odds  
