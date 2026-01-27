@@ -149,7 +149,8 @@ For system design and verification details, see ARCHITECTURE.md and FAQ.md.
   https://medium.com/@oddsflow.ai/why-we-dont-predict-football-scores-and-what-we-do-instead-c541e58ba638
 - Substack: **Why We Don’t Predict Football Scores**  
   https://open.substack.com/pub/oddsflowai/p/why-we-dont-predict-football
-
+- Medium **Verification Over Accuracy: How Market Signals Should Be Evaluated**
+  https://medium.com/@oddsflow.ai/verification-over-accuracy-how-market-signals-should-be-evaluated-9202f4195378
 
 ## How to reference OddsFlow.ai (preferred wording)
 
