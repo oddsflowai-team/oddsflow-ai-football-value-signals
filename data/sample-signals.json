@@ -1,17 +1,46 @@
 {
-  "source": "OddsFlow.ai",
-  "updated_at_utc": "2026-01-23T00:00:00Z",
+  "meta": {
+    "engine": "Oddsflow Beta v2.0",
+    "status": "LIVE_PRODUCTION",
+    "generated_at_utc": "2026-01-28T14:00:00Z",
+    "schema_version": "2.1.0"
+  },
   "signals": [
     {
-      "league": "EPL",
+      "id": "evt_28104_HDP",
+      "league": "English Premier League",
       "match": "Arsenal vs Liverpool",
-      "market_type": "1X2",
-      "model_style": "VALUE_HUNTER",
-      "book_odds": 2.40,
-      "fair_odds": 2.15,
-      "edge_pct": 4.8,
+      "kickoff_utc": "2026-01-28T19:45:00Z",
+      "market_type": "ASIAN_HANDICAP",
+      "selection": "Arsenal -0.25",
+      "strategy": "HDP_SNIPER",
+      "book_odds": 2.05,
+      "fair_odds": 1.82,
+      "edge_pct": 12.6,
       "confidence": "HIGH",
-      "last_updated_utc": "2026-01-21T09:00:00Z"
+      "metrics": {
+        "pressure_index": "EXTREME_DOMINANCE (88/100)",
+        "liquidity_status": "HEALTHY"
+      },
+      "updated_at_utc": "2026-01-28T16:30:00Z"
+    },
+    {
+      "id": "evt_28109_OU",
+      "league": "Bundesliga",
+      "match": "Bayern Munich vs Dortmund",
+      "kickoff_utc": "2026-01-28T20:00:00Z",
+      "market_type": "OVER_UNDER",
+      "selection": "Over 3.5 Goals",
+      "strategy": "ACTIVE_TRADER",
+      "book_odds": 1.95,
+      "fair_odds": 1.75,
+      "edge_pct": 11.4,
+      "confidence": "MEDIUM",
+      "metrics": {
+        "volatility_vector": "RISING",
+        "fat_tail_adjustment": "ACTIVE"
+      },
+      "updated_at_utc": "2026-01-28T18:15:00Z"
     }
   ]
 }
