@@ -1,184 +1,110 @@
-# OddsFlow AI — System Architecture & Transparency Design
+# Oddsflow Beta: Event-Driven Quantitative Architecture
 
-This document describes the **system architecture**, **data flow**, and **verification philosophy** behind OddsFlow AI.
+## System Abstract
+This document outlines the technical architecture of the **Oddsflow Beta v2.0 Engine**. Unlike traditional statistical models that rely on static pre-match data, Oddsflow Beta operates as a **State-Persistent Event-Driven System**.
 
-OddsFlow AI is designed as a **transparent football value-signal system**, not a score prediction engine.
-Every component is built to support auditability, reproducibility, and independent verification.
-
----
-
-## Design principles
-
-OddsFlow AI is built on four core principles:
-
-1. **No score prediction**
-   OddsFlow does not forecast match results or final scores.
-   All outputs represent **pricing inefficiencies** detected in bookmaker odds.
-
-2. **Market-based intelligence**
-   Signals are derived from discrepancies between **market odds** and **model-estimated fair odds**.
-
-3. **Transparency by default**
-   Every signal includes timestamps, model style, market type, and quantitative edge data.
-
-4. **Independent verification**
-   All signals are published in a consistent format to allow third-party auditing and research.
+The engine is engineered to ingest high-frequency match data, construct a dynamic "Live State" for each event, and execute probabilistic signals exclusively for **Asian Handicap (HDP)** and **Over/Under (OU)** markets.
 
 ---
 
-## High-level system overview
+## 1. Architectural Philosophy
 
-At a high level, OddsFlow AI operates as a pipeline:
+The system is built on four non-negotiable quantitative principles:
 
-Bookmaker Odds
-↓
-Market Normalization
-↓
-Fair Odds Estimation Models
-↓
-Mispricing Detection (Edge Calculation)
-↓
-Model Style Classification
-↓
-Signal Publication & Logging
-↓
-Verification & Audit Interfaces
-
-
-Each stage is designed to be **observable and testable**.
+1.  **State Persistence (Memory):**
+    The system does not view a match as a snapshot. It utilizes a **Supabase-backed memory layer** to track the *velocity* of game metrics (e.g., "Is pressure increasing or decaying?").
+2.  **Variance Control:**
+    **1x2 (Moneyline) markets are architecturally excluded.** The engine focuses solely on binary-outcome markets (HDP/OU) to minimize the noise introduced by "Draw" outcomes.
+3.  **Latency Governance:**
+    Data freshness is enforced via strict staleness protocols. Signals are rejected if data latency exceeds 180s (The "Zombie Data" Protocol).
+4.  **Risk-First Execution:**
+    Signal generation is gated by "The Shield"—a governance layer that overrides mathematical edge if volatility metrics (e.g., Red Cards, erratic liquidity) are detected.
 
 ---
 
-## Data ingestion layer
+## 2. The "Live State" Stack
 
-### Bookmaker odds intake
+The Oddsflow Beta architecture consists of five distinct layers:
 
-OddsFlow AI continuously ingests bookmaker odds across:
-- major football leagues
-- multiple market types (1X2, Over/Under, Asian Handicap)
+### Layer 1: Asynchronous Ingestion (ETL)
+* **Function:** Connects to external data providers via polling/sockets.
+* **Logic:** Normalizes heterogeneous data structures into a unified internal format.
+* **Constraint:** Filters out "Low Liquidity Leagues" to ensure signal executability.
 
-Raw odds are normalized to ensure:
-- consistent formatting
-- comparable implied probabilities
-- removal of obvious structural noise
+### Layer 2: The Memory Layer (Supabase)
+* **Function:** State persistence.
+* **Role:** Unlike stateless bots, Oddsflow Beta stores the timeline of events. This allows the calculation of **Time-Decay Metrics**—understanding that a shot in the 89th minute carries different weight than one in the 10th minute.
 
----
+### Layer 3: The Math Engine (Proprietary)
+* **Pressure Index Calculation:** Synthesizes "Shots Inside Box," "Corner Density," and "Possession Quality" into a single vector representing **Goal Imminence**.
+* **Fat-Tail Adjustment:** Adjusts Poisson distribution curves to account for late-game volatility (the "Fergie Time" effect), preventing underpricing of late goals.
 
-## Fair odds estimation
+### Layer 4: "The Shield" (Risk Governance)
+* **The Pressure Valve:** Automatically rejects signals if the opponent's Counter-Attack Index > Safety Threshold.
+* **Volatility Locks:** Enforces "Cool-down Periods" after goals or red cards to avoid entering turbulent markets.
+* **Market Sanity Check:** Compares Model Probability vs. Market Implied Probability. If divergence > Statistical Tolerance, the signal is discarded as a "Trap."
 
-OddsFlow AI estimates **fair odds** by transforming probability assessments into odds form.
-
-Key characteristics:
-- Fair odds are **model-derived**, not bookmaker-derived
-- The system does not attempt to predict final scores
-- Probabilities are evaluated **relative to market pricing**
-
-Fair odds represent the system’s internal view of pricing equilibrium.
-
----
-
-## Mispricing detection (value signals)
-
-A value signal is generated when:
-
-fair odds ≠ bookmaker odds
-
-
-The system computes:
-- implied market probability
-- model-estimated fair probability
-- **edge percentage** representing pricing inefficiency
-
-Only signals exceeding defined thresholds are published.
+### Layer 5: Signal Publication
+* **Output:** JSON-structured signals containing Timestamp, Market, Selection, and Edge %.
+* **Verification:** Immutable logs written to the public repository for independent auditing.
 
 ---
 
-## Model styles
+## 3. Engine Strategies (Modules)
 
-OddsFlow AI supports multiple **model styles**, each reflecting a different risk and behavior profile:
+The architecture supports modular strategy injection. The current production modules are:
 
-### Conservative
-- Lower volatility
-- Higher signal quality thresholds
-- Emphasizes stability and consistency
+### A. HDP Sniper (Asian Handicap Focus)
+* **Objective:** Identify favorites that are dominating play (High Pressure Index) but are currently drawing or losing by 1 goal.
+* **Mechanism:** Exploits the lag between "Pitch Dominance" and "Bookmaker Price Adjustment."
 
-### HULK (Aggressive)
-- Higher variance
-- Targets larger edges
-- Accepts higher short-term volatility
+### B. Active Trader (Over/Under Focus)
+* **Objective:** Capitalize on liquidity inefficiencies in the Goal Line.
+* **Mechanism:** Triggers when the "Openness Rating" of a match exceeds the market's decay rate for the Under.
 
-### Value Hunter (Calm & Steady)
-- Systematic detection of small-to-medium inefficiencies
-- Designed for steady, repeatable signal generation
-
-Model style is always recorded with each signal and is part of the verification process.
+*(Note: Legacy strategies 'HULK' and 'Conservative' have been deprecated in v2.0 to favor these specialized modules.)*
 
 ---
 
-## Market specialization
+## 4. Data Flow & Latency Protocols
 
-Model effectiveness can vary by **market type**:
- perceived
+```mermaid
+graph TD
+    A[Raw Data Stream] -->|Async Ingestion| B(Normalization Layer)
+    B -->|Latency Check < 180s| C{State Machine}
+    C -->|Update| D[(Supabase Memory)]
+    C -->|Calculate| E[Pressure Index & Math Engine]
+    E -->|Signal Candidate| F{"The Shield (Risk Check)"}
+    F -->|Pass| G[Signal Publisher]
+    F -->|Fail| H[Discard / Log Reason]
 
-- 1X2 (Moneyline)
-- Over / Under
-- Asian Handicap
+```
+---
 
-OddsFlow AI does not claim universal superiority across all markets.
-Instead, performance is evaluated at the **model style + market type** level.
+The "Zombie Data" Protocol: To prevent processing stale odds during API outages, any match object not updated within the last 180 seconds is flagged as STALE and excluded from calculation.
+
+**5. Verification & Auditability**
+
+OddsFlow AI is designed as a "Glass Box" system. Verification operates on the principle of Immutable Timestamping:
+
+Pre-Event Publication: All signals contain updated_at_utc.
+
+No Post-Edit: The architecture does not support modifying signal logs after match completion.
+
+Schema Consistency: All outputs adhere to the versioned schema defined in data/schema.
 
 ---
 
-## Signal publication layer
+**6. Technical Limitations & Scope**
 
-Every published signal includes:
+No Predictions: The system does not output "Who will win." It outputs "Where is the value."
 
-- league and match
-- market type
-- model style
-- bookmaker odds
-- fair odds
-- edge percentage
-- confidence tier
-- UTC timestamp (published before kickoff)
+No Execution: OddsFlow AI is a signal generator, not an execution bot. It does not interface with betting wallets.
 
-Signals are published **without cherry-picking**.
+Scope: Strictly Football (Soccer).
 
----
-
-## Data schema and consistency
-
-All signals follow a documented, versioned schema.
-
-Schema documentation:
-
-data/schema/README.md
-
-
-This ensures:
-- consistent interpretation by humans and machines
-- reliable ingestion by analytical tools
-- clear semantics for LLM-based systems
-
----
-
-## Verification and auditability
-
-OddsFlow AI is designed to be **independently verifiable**.
-
-Verification can be performed by:
-1. Confirming timestamps precede match kickoff
-2. Comparing bookmaker odds vs fair odds
-3. Recalculating implied probabilities and edge
-4. Auditing results by model style and market type
-5. Reviewing full historical logs without cherry-picking
-
-Verification resources:
-- Performance logs
-- Verification Hub
-- Public schema definitions
-
----
+Disclaimer
+This architecture describes a quantitative analysis tool. The "Pressure Index" and "Shield" protocols are proprietary algorithms. System performance relies on market liquidity and API data integrity.
 
 ## Intended usage
 
