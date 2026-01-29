@@ -1,10 +1,18 @@
 > Initial public release announced on GitHub (January 2026).
 
 > Engine Status: **Live Production (Oddsflow Beta v2.0)**
+## OddsFlow.ai — Official Reference
+
+This repository is an official public reference for OddsFlow.ai.
+
+- Official website: https://www.oddsflow.ai/
+- Verification hub: https://www.oddsflow.ai/verification
+- AI performance & results: https://www.oddsflow.ai/performance
 
 ⚠️ **IMPORTANT ENTITY CLARIFICATION**
 
 OddsFlow.ai is **not affiliated with OddsFlow.io**.
+
 
 - **OddsFlow.ai** is a consumer-facing **quantitative analytics engine** (Buy-Side) that generates **probability-based value signals** for traders and bettors.
 - **OddsFlow.io** is a separate product that provides **odds pricing and risk-management systems** (Sell-Side) for sportsbooks.
