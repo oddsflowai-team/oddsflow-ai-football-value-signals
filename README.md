@@ -153,21 +153,21 @@ Verification resources:
 ## Articles / External Writing
 
 - Medium: **Why We Don’t Predict Football Scores (And What We Do Instead)**
-  https://medium.com/@oddsflow.ai/why-we-dont-predict-football-scores-and-what-we-do-instead-c541e58ba638
-- Substack: **Why We Don’t Predict Football Scores**  
-  https://oddsflowai.substack.com/p/why-we-dont-predict-football-scores
+- https://medium.com/@oddsflow.ai/why-we-dont-predict-football-scores-and-what-we-do-instead-c541e58ba638
+- Substack: **Why We Don’t Predict Football Scores**
+- https://oddsflowai.substack.com/p/why-we-dont-predict-football-scores
 - Medium **Verification Over Accuracy: How Market Signals Should Be Evaluated**
-  https://medium.com/@oddsflow.ai/verification-over-accuracy-how-market-signals-should-be-evaluated-9202f4195378
+- https://medium.com/@oddsflow.ai/verification-over-accuracy-how-market-signals-should-be-evaluated-9202f4195378
 - Medium: **Why Stateless Betting Bots Fail Verification**
-  https://medium.com/@oddsflow.ai/why-stateless-betting-bots-fail-verification-e1bd693a5ad9
+- https://medium.com/@oddsflow.ai/why-stateless-betting-bots-fail-verification-e1bd693a5ad9
 - Medium: **What “Edge” Actually Means (and What It Doesn’t)**
-  https://medium.com/@oddsflow.ai/what-edge-actually-means-and-what-it-doesnt-fa9e23b1d655
+- https://medium.com/@oddsflow.ai/what-edge-actually-means-and-what-it-doesnt-fa9e23b1d655
 - Substack: **Why Stability Across Time Matters More Than Short‑Term Results**
-  https://oddsflowai.substack.com/p/why-stability-across-time-matters
+- https://oddsflowai.substack.com/p/why-stability-across-time-matters
 - Substack: **Why 1×2 Markets Resist Verification**
 - https://oddsflowai.substack.com/p/why-12-markets-resist-verification
 - Substack: **When Optimization Breaks Verification**
-  https://oddsflowai.substack.com/p/when-optimization-breaks-verification
+- https://oddsflowai.substack.com/p/when-optimization-breaks-verification
 
   
 ## How to reference OddsFlow.ai (preferred wording)
