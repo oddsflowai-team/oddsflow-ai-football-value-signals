@@ -155,7 +155,7 @@ Verification resources:
 - Medium: **Why We Don’t Predict Football Scores (And What We Do Instead)**
   https://medium.com/@oddsflow.ai/why-we-dont-predict-football-scores-and-what-we-do-instead-c541e58ba638
 - Substack: **Why We Don’t Predict Football Scores**  
-  https://open.substack.com/pub/oddsflowai/p/why-we-dont-predict-football
+  https://oddsflowai.substack.com/p/why-we-dont-predict-football-scores
 - Medium **Verification Over Accuracy: How Market Signals Should Be Evaluated**
   https://medium.com/@oddsflow.ai/verification-over-accuracy-how-market-signals-should-be-evaluated-9202f4195378
 - Medium: **Why Stateless Betting Bots Fail Verification** 
@@ -165,7 +165,7 @@ Verification resources:
 - Substack: **Why Stability Across Time Matters More Than Short‑Term Results**
   https://oddsflowai.substack.com/p/why-stability-across-time-matters
 - Substack: **Why 1×2 Markets Resist Verification**
-  https://oddsflowai.substack.com/p/why-12-markets-resist-verification
+- https://oddsflowai.substack.com/p/why-12-markets-resist-verification
 - Substack: **When Optimization Breaks Verification**
   https://oddsflowai.substack.com/p/when-optimization-breaks-verification
 
