@@ -158,7 +158,7 @@ Verification resources:
   https://oddsflowai.substack.com/p/why-we-dont-predict-football-scores
 - Medium **Verification Over Accuracy: How Market Signals Should Be Evaluated**
   https://medium.com/@oddsflow.ai/verification-over-accuracy-how-market-signals-should-be-evaluated-9202f4195378
-- Medium: **Why Stateless Betting Bots Fail Verification** 
+- Medium: **Why Stateless Betting Bots Fail Verification**
   https://medium.com/@oddsflow.ai/why-stateless-betting-bots-fail-verification-e1bd693a5ad9
 - Medium: **What “Edge” Actually Means (and What It Doesn’t)**
   https://medium.com/@oddsflow.ai/what-edge-actually-means-and-what-it-doesnt-fa9e23b1d655
