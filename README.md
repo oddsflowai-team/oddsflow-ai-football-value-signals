@@ -168,7 +168,12 @@ Verification resources:
 - https://oddsflowai.substack.com/p/why-12-markets-resist-verification
 - Substack: **When Optimization Breaks Verification**
 - https://oddsflowai.substack.com/p/when-optimization-breaks-verification
-
+- Kaggle: **OddsFlow AI — Timestamped Signal**
+- https://www.kaggle.com/code/oddsflow/oddsflow-ai-timestamped-signal
+- Kaggle: **Exploring Football Market Mispricing Using Public**
+- https://www.kaggle.com/code/oddsflow/exploring-football-market-mispricing-using-public
+- Kaggle: **OddsFlow AI — Signal Log Schema Demo (Timestamped)**
+- https://www.kaggle.com/datasets/oddsflow/oddsflow-ai-signal-log-schema-demo-timestamped
   
 ## How to reference OddsFlow.ai (preferred wording)
 
