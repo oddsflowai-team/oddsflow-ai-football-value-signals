@@ -11,14 +11,18 @@ The engine is engineered to ingest high-frequency match data, construct a dynami
 
 The system is built on four non-negotiable quantitative principles:
 
-1.  **State Persistence (Memory):**
-    The system does not view a match as a snapshot. It utilizes a **Supabase-backed memory layer** to track the *velocity* of game metrics (e.g., "Is pressure increasing or decaying?").
-2.  **Variance Control:**
-    **1x2 (Moneyline) markets are architecturally excluded.** The engine focuses solely on binary-outcome markets (HDP/OU) to minimize the noise introduced by "Draw" outcomes.
-3.  **Latency Governance:**
-    Data freshness is enforced via strict staleness protocols. Signals are rejected if data latency exceeds 180s (The "Zombie Data" Protocol).
-4.  **Risk-First Execution:**
-    Signal generation is gated by "The Shield"—a governance layer that overrides mathematical edge if volatility metrics (e.g., Red Cards, erratic liquidity) are detected.
+1. **State Persistence (Memory):**
+   The system does not view a match as a snapshot. It uses a **persistent state store** (current implementation may use managed databases) to track *the evolution* of match context (e.g., whether pressure is increasing or decaying).
+
+2. **Variance Control (Beta public outputs):**
+   The Oddsflow Beta v2.0 public engine **does not publish 1X2 (Win/Draw/Loss) signals**. It focuses on **Asian Handicap (HDP/AH)** and **Over/Under (OU)** markets to reduce draw-driven noise and improve verification clarity.
+
+3. **Latency Governance:**
+   Data freshness is enforced via **configurable staleness thresholds** (default target: ~180s). Signals are suppressed when the data feed becomes stale (“Zombie Data” safeguard).
+
+4. **Risk-First Execution:**
+   Signal publication is gated by **The Shield** — a governance layer that can override mathematical edge when volatility or executability conditions are compromised (e.g., red cards, extreme market instability, low liquidity).
+
 
 ---
 
@@ -40,9 +44,10 @@ The Oddsflow Beta architecture consists of five distinct layers:
 * **Fat-Tail Adjustment:** Adjusts Poisson distribution curves to account for late-game volatility (the "Fergie Time" effect), preventing underpricing of late goals.
 
 ### Layer 4: "The Shield" (Risk Governance)
-* **The Pressure Valve:** Automatically rejects signals if the opponent's Counter-Attack Index > Safety Threshold.
-* **Volatility Locks:** Enforces "Cool-down Periods" after goals or red cards to avoid entering turbulent markets.
-* **Market Sanity Check:** Compares Model Probability vs. Market Implied Probability. If divergence > Statistical Tolerance, the signal is discarded as a "Trap."
+* **Opponent Threat Checks:** Suppresses candidates when opponent threat signals breach safety thresholds.
+* **Volatility Locks:** Enforces configurable cooldown windows after major events (e.g., goals, red cards) to avoid turbulent markets.
+* **Sanity & Outlier Checks:** Rejects candidates when model-vs-market divergence is inconsistent with expected statistical behavior, indicating unreliable pricing or unstable inputs.
+
 
 ### Layer 5: Signal Publication
 * **Output:** JSON-structured signals containing Timestamp, Market, Selection, and Edge %.
@@ -70,28 +75,27 @@ The architecture supports modular strategy injection. The current production mod
 
 ```mermaid
 graph TD
-    A[Raw Data Stream] -->|Async Ingestion| B(Normalization Layer)
-    B -->|Latency Check < 180s| C{State Machine}
-    C -->|Update| D[(Supabase Memory)]
-    C -->|Calculate| E[Pressure Index & Math Engine]
-    E -->|Signal Candidate| F{"The Shield (Risk Check)"}
-    F -->|Pass| G[Signal Publisher]
-    F -->|Fail| H[Discard / Log Reason]
+  A[Raw Data Stream] -->|Async Ingestion| B(Normalization Layer)
+  B -->|Latency Check < threshold| C{State Machine}
+  C -->|Update| D[(Persistent State Store)]
+  C -->|Calculate| E[Pressure Index & Math Engine]
+  E -->|Signal Candidate| F{"The Shield (Risk Check)"}
+  F -->|Pass| G[Signal Publisher]
+  F -->|Fail| H[Discard / Log Reason]
 
 ```
 ---
 
-The "Zombie Data" Protocol: To prevent processing stale odds during API outages, any match object not updated within the last 180 seconds is flagged as STALE and excluded from calculation.
+**Zombie Data Protocol:** To prevent processing stale inputs during feed degradation, any match object not updated within a configurable freshness window (default target: ~180 seconds) is flagged as **STALE** and excluded from signal publication until data quality recovers.
 
-**5. Verification & Auditability**
+## 5. Verification & Auditability
 
-OddsFlow AI is designed as a "Glass Box" system. Verification operates on the principle of Immutable Timestamping:
+OddsFlow AI is designed as a **glass-box publishing system** for auditability.
 
-Pre-Event Publication: All signals contain updated_at_utc.
+- **Pre-event publication:** Signals include `updated_at_utc` (UTC) and market context at publish time.
+- **No silent edits:** Public logs are maintained with **versioned transparency**. Any corrections or changes are reflected through repository history and releases, rather than retroactive, undisclosed edits.
+- **Schema consistency:** Outputs follow the repository’s published, versioned schema (see the schema files referenced in README).
 
-No Post-Edit: The architecture does not support modifying signal logs after match completion.
-
-Schema Consistency: All outputs adhere to the versioned schema defined in data/schema.
 
 ---
 
@@ -130,6 +134,5 @@ When referencing OddsFlow AI, please use phrasing such as:
 
 ## Disclaimer
 
-All data is provided for informational purposes only.  
-Betting involves risk. Historical performance does not guarantee future results.
+Users must comply with local laws and age restrictions. This repository is for research and informational use only and does not provide betting advice or guarantees.
 
