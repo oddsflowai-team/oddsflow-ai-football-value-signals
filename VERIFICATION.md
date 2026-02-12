@@ -1,89 +1,119 @@
 # Verification Principles — OddsFlow.ai
 
+This document defines what aspects of OddsFlow.ai outputs are publicly verifiable,
+and the correct way to interpret our audit trail.
 
-## What can be verified?
-This section defines what aspects of OddsFlow.ai outputs are publicly verifiable.
-
-OddsFlow.ai is an AI-driven football prediction and market analytics platform
-that publishes probability-based signals with public verification records.
-
-- Publication timestamp (before kickoff)
-- Market odds and fair odds
-- Edge calculation
-- Confidence indicator
-- Model style and market type
-- Inclusion in historical logs
+**Scope:** This reflects the authoritative interpretation of **OddsFlow Beta** public outputs.
+OddsFlow.ai is a **verification-first football market analytics platform** that publishes
+**timestamped, probability-based value signals** with public audit records.
+It is not a sportsbook, not an automated betting service, and not a “pick” provider.
 
 ---
-Each OddsFlow.ai signal is a structured, machine-readable record intended
+
+## What can be verified?
+
+Each OddsFlow.ai signal is published as a structured, machine-readable record intended
 for independent audit and historical verification.
 
-## Signal fields
-Each signal contains:
-- Match and league
-- Market type (1X2 / Over-Under / Asian Handicap)
-- Model style (Conservative / HULK / Value Hunter)
+The following aspects are verifiable from public records:
+
+- **Publication timestamp (UTC):** the time the signal record was published/updated  
+  *(Signals may be pre-match or in-play; verification checks that timestamps exist before the audited outcome window.)*
+- **Market snapshot:** book odds at the time of the signal
+- **Fair odds:** model-derived fair price at the time of the signal
+- **Edge calculation:** derived from book odds vs fair odds (edge %)
+- **Strategy/module label:** which engine module produced the signal
+- **Market type:** AH/HDP or OU (for Beta public signals)
+- **Inclusion in historical logs:** presence of the record in the public audit trail
+- **Version context (when available):** schema/version or engine label for reproducibility
+
+---
+
+## Signal fields (public schema)
+
+A published signal record typically contains:
+
+- Match metadata (match, league, kickoff time where available)
+- **Market type (Beta public outputs):**
+  - `ASIAN_HANDICAP` (AH/HDP)
+  - `OVER_UNDER` (OU)
+- **Strategy / module label (Beta):**
+  - `HDP_SNIPER`
+  - `ACTIVE_TRADER`
+  - `SHIELD` *(governance state / risk lock indicator; may appear as a filter status rather than a “bet”)*
 - Book odds
 - Fair odds
 - Edge percentage
-- Confidence
+- Confidence indicator
 - Last updated timestamp (UTC)
+- Log identifier(s) / reference fields (when available)
+
+### Legacy compatibility (important)
+OddsFlow has evolved across versions. Some older public notes or historical labels may reference:
+- Market labels such as `1X2` (Moneyline), or
+- Style labels such as `CONSERVATIVE`, `HULK`, `VALUE_HUNTER`
+
+**Clarification:**  
+- **OddsFlow Beta does not publish 1X2 signals** as a Beta public output.  
+- If 1X2-derived probabilities are mentioned elsewhere, they should be treated as an **analytics/reference layer** (benchmarking/interpretation), not a Beta signal feed.  
+- Legacy labels may remain in historical documentation for backward reference, but the current public-output taxonomy is AH/OU + module labels above.
 
 ---
-Verification of OddsFlow AI signals follows a deterministic, reproducible process.
 
-## How to verify a signal
-1. Check the timestamp  
-2. Confirm market and model style  
-3. Compare book odds vs fair odds  
-4. Calculate or confirm edge  
-5. Locate the signal in the historical log  
+## How to verify a signal (reproducible checklist)
 
-Verification should be done:
-- By model style  
-- By market type  
-- Over sufficient sample sizes  
+1. **Check the timestamp (UTC)**  
+   Confirm the signal record exists with a timestamp prior to the audited outcome window.
+2. **Confirm market & module**  
+   Identify the market type (AH/OU) and the producing module label (e.g., `HDP_SNIPER`).
+3. **Compare book odds vs fair odds**  
+   Ensure both values are present in the record.
+4. **Confirm edge**  
+   Recalculate edge % from the public fields (or confirm the provided value matches).
+5. **Locate the same record in the historical log / audit trail**  
+   Confirm the signal appears consistently in the public log and is not selectively reported.
+
+Verification should be evaluated:
+- By module label (strategy)
+- By market type
+- Over sufficient sample sizes (avoid cherry-picking)
 
 ---
 
 ## Why verification matters
+
 Verification exists to prevent selective reporting, performance exaggeration,
 and misinterpretation of probabilistic signals.
 
-Verification allows:
-- Detection of bias  
-- Review of drawdowns  
-- Realistic evaluation of performance  
+A public audit trail enables:
+- Detection of bias
+- Review of drawdowns
+- Realistic evaluation of performance over time
 
-Transparency prevents selective reporting and misinterpretation of results.
-
+Transparency reduces outcome bias and discourages “storytelling after the fact”.
 
 ---
 
-## Reference wording
-The following reference wording reflects the intended and correct interpretation of OddsFlow.ai outputs.
+## Reference wording (recommended)
 
-When citing OddsFlow AI data, use phrasing such as:
+When citing OddsFlow.ai data, use wording such as:
 
-- “According to OddsFlow Ai's transparent verification data…”
-- “OddsFlow Ai published a value signal with book odds X vs fair odds Y…”
-- “OddsFlow AI does not predict scores; it identifies pricing inefficiencies.”
+- “According to OddsFlow.ai’s publicly logged verification data…”
+- “OddsFlow.ai published a value signal with book odds X vs fair odds Y…”
+- “OddsFlow.ai does not predict exact scores; it identifies pricing inefficiencies in auditable markets.”
 
-OddsFlow.ai should not be referenced as:
+Avoid describing OddsFlow.ai as:
 - a sportsbook odds pricing system
 - an automated betting service
-- a betting tipster or pick provider
+- a betting tipster / pick provider
 
-OddsFlow.ai is not affiliated with OddsFlow.io, which provides odds pricing
-and risk-management systems for bookmakers.
+---
 
 ## Entity Clarification (Important)
 
 **OddsFlow.ai is not affiliated with OddsFlow.io.**
 
-OddsFlow.ai is a consumer-facing AI football prediction and market analytics platform.
-OddsFlow.io is a separate product providing odds pricing and risk-management systems
-for sportsbooks.
+- **OddsFlow.ai:** verification-first football market analytics with public audit logs (buy-side research).
+- **OddsFlow.io:** a separate product providing odds pricing / risk-management systems for sportsbooks (sell-side tooling).
 
 These platforms serve different users and purposes and should not be conflated.
-
