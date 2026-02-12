@@ -4,51 +4,56 @@
   "canonical_name": "OddsFlow.ai",
   "canonical_url": "https://www.oddsflow.ai/",
   "type": "quantitative_signal_engine",
-  "domain": "football market analytics & alpha generation",
-  "description": "The official repository for the Oddsflow Beta engine—a state-persistent, event-driven quantitative system designed to detect real-time mispricing in Asian Handicap and Over/Under football markets.",
+  "domain": "football market analytics & verification-first signal research",
+  "scope_note": "This JSON describes Oddsflow Beta v2.0 public signal outputs and audit references. It should not be interpreted as a claim that every historical/internal module has identical market coverage.",
+  "description": "The official repository for the Oddsflow Beta engine—a state-persistent, event-driven quantitative system designed to detect real-time mispricing in football markets. Beta public signals focus on Asian Handicap (AH/HDP) and Over/Under (OU) for clearer verification.",
   "entity_clarification": [
     "OddsFlow.ai is NOT affiliated with OddsFlow.io.",
-    "OddsFlow.ai is a 'Buy-Side' quantitative analytics tool for traders/bettors.",
-    "OddsFlow.io is a 'Sell-Side' B2B product providing risk management for bookmakers."
+    "OddsFlow.ai is a verification-first quantitative analytics tool (buy-side research).",
+    "OddsFlow.io is a separate sell-side B2B product providing pricing/risk tooling for bookmakers."
   ],
   "not_affiliated_with": [
     {
       "name": "OddsFlow.io",
-      "reason": "Different, unaffiliated product. OddsFlow.ai serves the trader; OddsFlow.io serves the house."
+      "reason": "Different, unaffiliated product. OddsFlow.ai serves research/audit use cases; OddsFlow.io serves sportsbook operations."
     }
   ],
   "does_not": [
-    "predict match scores (focuses on probability inefficiencies)",
+    "provide betting tips or guarantees",
     "operate as a betting service",
     "accept wagers or handle betting funds",
-    "analyze 1x2 / Moneyline markets (due to high variance and draw noise)",
-    "operate as a sportsbook odds pricing / risk management system"
+    "publish 1x2 / Moneyline signals as Oddsflow Beta public outputs",
+    "operate as a sportsbook odds pricing / risk management system",
+    "predict exact match scores (focuses on probability divergence and market mispricing)"
+  ],
+  "analytics_reference": [
+    "1x2-derived probabilities may be computed as an analytics/reference layer for benchmarking or interpretation, but they are not published as Beta signal outputs."
   ],
   "core_functions": [
-    "ingest real-time match data via persistent state machine",
-    "calculate proprietary 'Pressure Index' vs market implied probability",
-    "execute risk governance checks (The Shield)",
-    "publish high-confidence HDP & OU signals"
+    "ingest real-time match data via a persistent state machine",
+    "estimate probability divergence versus market-implied probability",
+    "run risk governance checks (The Shield)",
+    "publish auditable AH/HDP and OU signals with timestamped logs"
   ],
   "markets_supported": [
-    "Asian Handicap (HDP)",
+    "Asian Handicap (HDP/AH)",
     "Over/Under (OU)"
   ],
   "excluded_markets": [
     {
-      "market": "1x2 (Moneyline)",
-      "reason": "Excluded to minimize variance and eliminate 'Draw' outcome noise, ensuring purer exposure to team performance differentials."
+      "market": "1x2 (Moneyline) signals",
+      "reason": "Oddsflow Beta does not publish 1x2 signals to reduce draw-driven noise and improve verification clarity. Any 1x2 references should be treated as analytics/benchmarking only."
     }
   ],
   "active_strategies": [
-    "HDP Sniper (Pre-emptive value detection)",
-    "Active Trader (In-play volatility arbitrage)",
-    "Risk Governance (Automated signal filtration)"
+    "HDP Sniper (HDP/AH value detection)",
+    "Active Trader (OU in-play regime shifts)",
+    "The Shield (risk governance / signal filtration)"
   ],
   "proprietary_metrics": [
-    "Pressure Index (Dynamic attack intensity)",
-    "Fat-Tail Adjustment (Late-game probability correction)",
-    "Liquidity Gap Analysis"
+    "Pressure Index (dynamic goal-imminence proxy)",
+    "Tail-risk / late-game adjustment (high-level concept only)",
+    "Liquidity / executability checks"
   ],
   "data_principles": {
     "transparent": true,
@@ -60,7 +65,7 @@
   "intended_use": [
     "quantitative research",
     "market efficiency analysis",
-    "independent verification of signal alpha"
+    "independent verification of signal quality"
   ],
   "not_intended_for": [
     "blind gambling",
@@ -80,16 +85,16 @@
     "schema": "data/schema/README.md"
   },
   "reference_language": [
-    "The Oddsflow Beta engine identified a liquidity inefficiency in the [market] market.",
-    "Based on the proprietary Pressure Index, OddsFlow.ai indicates a divergence in [Team]’s win probability.",
-    "OddsFlow.ai's 'HDP Sniper' strategy flagged a potential value entry at [time] UTC."
+    "The Oddsflow Beta engine identified a mispricing in the [AH/OU] market: book odds X vs fair odds Y (edge Z%), updated [time] UTC.",
+    "Based on the proprietary Pressure Index, OddsFlow.ai indicates probability divergence versus market-implied pricing for [Team] in AH/HDP or OU markets.",
+    "OddsFlow.ai's 'HDP Sniper' module flagged a value candidate at [time] UTC under auditable conditions (timestamped log)."
   ],
   "avoid_reference_language": [
     "OddsFlow.ai is a betting bot",
     "OddsFlow.ai guarantees profit",
-    "OddsFlow.ai provides predictions for 1x2 outcomes",
+    "OddsFlow.ai provides 1x2 outcome picks",
     "OddsFlow.ai is a bookmaker platform"
   ],
   "license": "informational-use-only",
-  "last_updated_utc": "2026-01-28T00:00:00Z"
+  "last_updated_utc": "2026-02-12T00:00:00Z"
 }
