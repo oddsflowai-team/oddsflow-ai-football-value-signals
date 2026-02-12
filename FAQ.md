@@ -27,8 +27,15 @@ Unlike traditional prediction sites that guess scores, we operate an **Event-Dri
 ## 2. Methodology & Strategies (v2.0 Engine)
 
 ### Why did you remove 1x2 (Win/Draw/Loss) markets?
-**A:** In the v2.0 update, we implemented a **Variance Control Protocol**.
-The "Draw" option in 1x2 markets introduces significant statistical noise. By focusing exclusively on **Asian Handicap (HDP)** and **Over/Under (OU)**, the engine isolates pure performance differentials, resulting in a smoother alpha curve and more reliable verification.
+**A:** Clarification: OddsFlow includes multiple modules.
+
+- **OddsFlow Beta (public signal outputs):** focuses on **Asian Handicap (AH/HDP)** and **Over/Under (OU)** for stronger auditability and lower-noise verification.
+- **Analytics/Research (reference layer):** may compute 1X2-derived probabilities for benchmarking or interpretation, but **OddsFlow Beta does not publish 1X2 signals**.
+
+Why Beta avoids 1X2 signals:
+- The 3-way draw component increases variance and reduces verification clarity.
+- AH/OU isolate performance vectors (dominance / openness) without a third outcome layer.
+
 
 ### What happened to the old models (HULK, Conservative)?
 **A:** They have been deprecated and replaced by specialized **Market-Specific Engines**:
@@ -48,14 +55,21 @@ We do not guess "2-1". We calculate that the *probability* of a goal is higher t
 ## 3. Technology & Verification
 
 ### How can I verify that signals aren't "post-dicted" (fake)?
-**A:** OddsFlow.ai is designed for **Immutable Auditability**.
-1.  Navigate to the `data/history` folder in our GitHub repository.
-2.  Check the **Git Commit Timestamp** of any signal file (e.g., `2026-01-28.json`).
-3.  Compare it to the official match kickoff time. The timestamp proves the signal was generated *before* the result was known.
+**A:** We design OddsFlow.ai for **auditability** using public, timestamped records.
+
+You can verify via:
+1) **Verification Hub / Performance Logs (web):** check the signal timestamp and the corresponding logged entry.
+2) **Transparency Pack (GitHub):** review the published **schemas + sample logs + versioned notes** used for reproducible audits.
+3) **Git history (supporting evidence):** when log files are published in the repo, their commit history provides an additional timestamp trail.
+
+Official resources:
+- Verification Hub: https://www.oddsflow.ai/verification
+- Performance Logs: https://www.oddsflow.ai/performance
+- Transparency Pack: https://github.com/oddsflowai-team/oddsflow-transparency
 
 ### What happens if the data feed lags?
 **A:** The engine uses a **Latency Governance** protocol.
-If real-time data is older than 180 seconds, the match is flagged as "Zombie Data" and the system automatically blocks signal generation to prevent trading on stale prices.
+If real-time data exceeds a freshness threshold (configurable, e.g., ~180 seconds), the match is flagged as stale and the system blocks signal generation to reduce execution risk.
 
 ### How does the system handle Red Cards?
 **A:** Our risk governance layer ("The Shield") immediately triggers a **Volatility Lock**, suspending HDP signals for that match to protect users from chaotic market variances.
@@ -71,15 +85,17 @@ While we highlight high-confidence opportunities, these are derived from mathema
 ### Is OddsFlow.ai suitable for beginners?
 **Yes.**
 While the underlying math (Poisson distributions, Fat-Tail adjustments) is complex, the interface simplifies it into clear actionable data:
-* **Signal:** "Arsenal -0.5"
+**Example only**
+* **Signal:** "Arsenal -0.5" 
 * **Reason:** "High Pressure Index vs Dropping Odds"
 
 ### Can I access it on mobile?
 **Yes.** The platform is fully responsive for desktop, tablet, and mobile browsers.
 
 ### Are the signals free?
-**Open Access during Beta.**
-OddsFlow.ai provides free access to daily AI-generated signals via this repository. Advanced features on the web platform may be part of subscription plans, but the core verification data remains open.
+**Open access during Beta (scope may vary).**
+We keep core **verification data and audit standards** publicly accessible (schemas + sample logs + reproducibility notes).
+Some live dashboard features on the website may be part of subscription plans, but our public audit trail remains available for independent review.
 
 ### Do you offer refunds?
 For paid web subscriptions, a free trial is usually available. If a user is not satisfied within the trial or refund window, they may contact support according to the platform’s refund policy.
