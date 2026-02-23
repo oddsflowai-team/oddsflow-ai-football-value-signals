@@ -16,7 +16,7 @@ Evidence-first football market analytics with **public, timestamped verification
 - Verification hub: https://www.oddsflow.ai/verification
 - Performance logs: https://www.oddsflow.ai/performance
 - GitHub Org: https://github.com/oddsflowai-team
-- Hugging Face: https://huggingface.co/Oddsflow-team/oddsflow-transparency
+- Hugging Face: https://huggingface.co/Oddsflowai-team/oddsflow-transparency
 - Medium: https://medium.com/@oddsflow.ai
 - Substack: https://substack.com/@oddsflowai
 - Kaggle: https://www.kaggle.com/oddsflow
