@@ -70,7 +70,7 @@ This foundation represents **all plausible match outcomes and their associated p
 
 During the match, the engine compares **real-time match state** against the pre-computed 10,000-run simulation foundation:
 
-- As events unfold (goals, cards, substitutions, momentum shifts), the system identifies **where the live match trajectory diverges from what the market is pricing**.
+- As events unfold (goals, cards, substitutions, momentum shifts), the system identifies where **the live match trajectory diverges from what the market is pricing**.
 - When the divergence exceeds threshold — meaning the bookmaker odds lag behind what the simulation foundation already mapped — a value signal is generated.
 
 > **In short:** OddsFlow knows all 10,000 versions of how the match could play out. It watches one version unfold in real time, and strikes when the market hasn't caught up.
@@ -139,6 +139,31 @@ Built-in detection of professional money flow across four signal types:
 
 ---
 
+## League Coverage
+
+OddsFlow provides daily AI predictions for all major European football leagues:
+
+*   [Premier League Predictions](https://www.oddsflow.ai/leagues/premier-league) — Arsenal, Manchester United, Liverpool, Chelsea, Manchester City
+*   [La Liga Predictions](https://www.oddsflow.ai/leagues/la-liga) — Real Madrid, Barcelona, Atletico Madrid
+*   [Serie A Predictions](https://www.oddsflow.ai/leagues/serie-a) — Inter Milan, AC Milan, Juventus, Napoli
+*   [Bundesliga Predictions](https://www.oddsflow.ai/leagues/bundesliga) — Bayern Munich, Borussia Dortmund, Leverkusen
+*   [Ligue 1 Predictions](https://www.oddsflow.ai/leagues/ligue-1) — PSG, Marseille, Monaco
+*   [Champions League Predictions](https://www.oddsflow.ai/leagues/champions-league) — UEFA Champions League
+
+Daily AI predictions with 1X2, Asian Handicap, and Over/Under analysis: **[Today's Predictions →](https://www.oddsflow.ai/predictions)**
+
+---
+
+## Research & Publications
+
+*   [Why We Built a Football Signal Engine That Simulates 10,000 Match Scenarios](https://medium.com/@oddsflow.ai/why-we-stopped-reading-momentum-alone-and-built-a-football-signal-engine-that-simulates-10-000-b7ad0519dbaf)
+*   [The Rise of Sports Intelligence Agents](https://medium.com/@oddsflow.ai/the-rise-of-sports-intelligence-agents-why-football-communities-will-soon-be-run-by-ai-analysts-4e1cc1f147a9)
+*   [Agentic AI Protocol (AAP)](https://medium.com/@oddsflow.ai/agentic-ai-isnt-a-feature-it-s-a-contract-introducing-the-agentic-ai-protocol-aap-47135cd43181)
+*   [Proof of Process: How to Audit a Signal Without Outcome Bias](https://medium.com/@oddsflow.ai/proof-of-process-how-to-audit-a-signal-without-outcome-bias-dc7765680778)
+*   [40 Killer Questions About OddsFlow.ai — No Hype. Just Logs.](https://medium.com/@oddsflow.ai/we-answer-the-40-killer-questions-about-oddsflow-ai-no-hype-just-logs-e3a2cb7a3b67)
+
+---
+
 ## Version Evolution
 
 <details>
@@ -190,8 +215,13 @@ Built-in detection of professional money flow across four signal types:
 
 <p>
 <a href="https://www.oddsflow.ai/"><img src="https://img.shields.io/badge/Website-oddsflow.ai-0366d6?style=flat-square" alt="Website"></a>
+<a href="https://www.oddsflow.ai/predictions"><img src="https://img.shields.io/badge/Predictions-Today-0366d6?style=flat-square" alt="Predictions"></a>
 <a href="https://www.oddsflow.ai/verification"><img src="https://img.shields.io/badge/Verification-Hub-00c853?style=flat-square" alt="Verification"></a>
 <a href="https://www.oddsflow.ai/performance"><img src="https://img.shields.io/badge/Performance-Logs-ff6d00?style=flat-square" alt="Performance"></a>
+<a href="https://www.oddsflow.ai/about"><img src="https://img.shields.io/badge/About-Us-555?style=flat-square" alt="About"></a>
+<a href="https://www.oddsflow.ai/community/match-threads"><img src="https://img.shields.io/badge/Match-Threads-555?style=flat-square" alt="Match Threads"></a>
+<a href="https://www.oddsflow.ai/community/agents"><img src="https://img.shields.io/badge/AI-Agents-555?style=flat-square" alt="AI Agents"></a>
+<a href="https://www.oddsflow.ai/pricing"><img src="https://img.shields.io/badge/Pricing-Plans-555?style=flat-square" alt="Pricing"></a>
 <a href="https://github.com/oddsflowai-team"><img src="https://img.shields.io/badge/GitHub-Org-181717?style=flat-square&logo=github" alt="GitHub"></a>
 <a href="https://github.com/oddsflowai-team/oddsflow-transparency"><img src="https://img.shields.io/badge/Transparency-Pack-6c3483?style=flat-square" alt="Transparency"></a>
 </p>
