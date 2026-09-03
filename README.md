@@ -75,8 +75,11 @@ During the match, the engine compares **real-time match state** against the pre-
 > optimistic by construction: they are measured on the history the model was
 > shaped on, and no bet in them was ever placed at a real price.
 >
-> **The live settled record is +11.67% ROI over 24,898 real bets**, published one
-> row per bet with the losses included and recomputable from the raw file:
+> **The live settled record is published per bet**, losses included, and is
+> recomputable from the raw file. It is deliberately not repeated here: a figure
+> typed into a README is a figure that goes stale the next day and stays stale
+> for months — which is exactly how this file came to advertise a 50.6% return.
+> Read it from the source:
 > [oddsflow.ai/accuracy](https://www.oddsflow.ai/accuracy) ·
 > [open dataset](https://github.com/oddsflowai-team/oddsflow-transparency)
 >
