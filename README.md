@@ -17,32 +17,25 @@
 
 ---
 
-## System Performance at a Glance
+## System Performance
 
-<table>
-<tr>
-<td>
+This README used to print a performance table here. It has been removed rather
+than updated, because a figure frozen in a README is a figure that will be wrong
+again — that table was five months stale and quoted a return roughly three times
+the real one, while the site next door published the honest number.
 
-| Metric | Value |
-|:-------|------:|
-| **Total Bets** | 3,181 |
-| **Win Rate** | 57.4% |
-| **ROI** | 38.5% |
-| **Profit** (@ $100/unit) | $664,126 |
-| **Sample** | 600 matches |
+**The live record lives in one place:**
 
-</td>
-<td>
+- **[oddsflow.ai/accuracy](https://www.oddsflow.ai/accuracy)** — overall and
+  per-model ROI, win rate and sample size, regenerated daily.
+- **[Open dataset](https://github.com/oddsflowai-team/oddsflow-transparency)** —
+  every settled bet, one row each, with the entry odds, stake and profit/loss.
+  Recompute any figure above yourself; losses are published on identical terms
+  to wins.
 
-| Best by Market | System | Hit Rate | ROI |
-|:---------------|:-------|:--------:|----:|
-| **1X2 Moneyline** | S4.2 Hybrid | 65.4% | **68.1%** |
-| **Asian Handicap** | S4.2 Hybrid | 63.0% | **56.5%** |
-| **Over/Under** | S2 Active Trader | 66.7% | **35.7%** |
-
-</td>
-</tr>
-</table>
+Judge any prediction service by ROI, not win rate. A high hit rate on short-odds
+favourites still loses money — that is the whole reason the number worth quoting
+is the return, and the reason it has to come from a record you can recompute.
 
 ---
 
@@ -101,14 +94,7 @@ OddsFlow runs **six independent strategy systems**, each targeting different mar
 
 The Hybrid system achieves the highest signal quality by requiring **both** AI model confirmation **and** market pressure validation before generating a signal. This dual-gate approach dramatically reduces false positives.
 
-<table>
-<tr>
-<td align="center"><strong>64.1%</strong><br><sub>Hit Rate</sub></td>
-<td align="center"><strong>50.6%</strong><br><sub>Overall ROI</sub></td>
-<td align="center"><strong>68.1%</strong><br><sub>1X2 ROI</sub></td>
-<td align="center"><strong>56.5%</strong><br><sub>HDP ROI</sub></td>
-</tr>
-</table>
+_Live hit rate and ROI: [oddsflow.ai/accuracy](https://www.oddsflow.ai/accuracy) — recomputable from the [open dataset](https://github.com/oddsflowai-team/oddsflow-transparency)._
 
 ### Coming Next: OddsFlow Core Strategy
 
@@ -120,9 +106,9 @@ The Hybrid system achieves the highest signal quality by requiring **both** AI m
 
 | Market | Description | Best System |
 |:-------|:-----------|:------------|
-| **Asian Handicap (HDP)** | Quarter-line and half-line support with split-stake settlement | S4.2 Hybrid (56.5% ROI) |
-| **Over/Under (OU)** | Goal totals with dynamic threshold adjustment | S2 Active Trader (35.7% ROI) |
-| **1X2 Moneyline** | Match result prediction with probability calibration | S4.2 Hybrid (68.1% ROI) |
+| **Asian Handicap (HDP)** | Quarter-line and half-line support with split-stake settlement | S4.2 Hybrid |
+| **Over/Under (OU)** | Goal totals with dynamic threshold adjustment | S2 Active Trader |
+| **1X2 Moneyline** | Match result prediction with probability calibration | S4.2 Hybrid |
 
 ---
 
