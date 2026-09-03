@@ -70,6 +70,19 @@ During the match, the engine compares **real-time match state** against the pre-
 
 ---
 
+> ⚠️ **Every percentage in the tables below is a BACKTEST figure**, computed over
+> historical fixtures with the V8-era engine (retired 2026-08-24). Backtests are
+> optimistic by construction: they are measured on the history the model was
+> shaped on, and no bet in them was ever placed at a real price.
+>
+> **The live settled record is +11.67% ROI over 24,898 real bets**, published one
+> row per bet with the losses included and recomputable from the raw file:
+> [oddsflow.ai/accuracy](https://www.oddsflow.ai/accuracy) ·
+> [open dataset](https://github.com/oddsflowai-team/oddsflow-transparency)
+>
+> Do not quote the numbers below as OddsFlow's track record. They describe how
+> the systems compared to each other in testing, which is what this document is for.
+
 ## Strategy Systems
 
 OddsFlow runs **six independent strategy systems**, each targeting different market conditions:
@@ -165,9 +178,9 @@ Daily AI predictions with 1X2, Asian Handicap, and Over/Under analysis: **[Today
 | **Backtesting** | None | Full engine with batch testing, debug mode, automated reporting |
 | **Concurrent Matches** | Limited | Perpetual mode — 20-30 simultaneous matches |
 | **Settlement** | Manual | Automated with full AH quarter-line split-stake rules |
-| **Best System ROI** | N/A | **50.6%** (S4.2 Hybrid) |
-| **Best Hit Rate** | N/A | **64.1%** (S4.2 Hybrid) |
-| **1X2 ROI** | Not supported | **~68%** (S4 family) |
+| **Best System ROI** (backtest) | N/A | **50.6%** (S4.2 Hybrid) |
+| **Best Hit Rate** (backtest) | N/A | **64.1%** (S4.2 Hybrid) |
+| **1X2 ROI** (backtest) | Not supported | **~68%** (S4 family) |
 | **Tech Stack** | Supabase + basic ETL | Node.js/TypeScript + PostgreSQL + Monte Carlo + multi-source feeds |
 
 </details>
